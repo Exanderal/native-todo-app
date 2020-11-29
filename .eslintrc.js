@@ -3,4 +3,11 @@ module.exports = {
   extends: '@react-native-community',
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint'],
+  overrides: [
+    {
+      rules: {
+        'eslint-disable': true,
+      },
+    },
+  ],
 };

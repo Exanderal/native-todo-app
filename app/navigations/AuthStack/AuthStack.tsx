@@ -3,6 +3,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {AuthStackParamList} from './AuthStackTypes';
 import Login from '../../screens/Auth/Login';
 import SignUp from '../../screens/Auth/SignUp';
+import SignUpHeader from '../../components/screens/SignUp/Header';
 
 const Stack = createStackNavigator<AuthStackParamList>();
 
@@ -17,7 +18,18 @@ const AuthStack = () => {
       <Stack.Screen
         name="SignUp"
         component={SignUp}
-        options={{headerTitle: 'Sign Up'}}
+        options={({navigation}) => {
+          return {
+            headerTitle: '',
+            headerLeft: () => (
+              <SignUpHeader
+                onPress={() => {
+                  navigation.goBack();
+                }}
+              />
+            ),
+          };
+        }}
       />
     </Stack.Navigator>
   );

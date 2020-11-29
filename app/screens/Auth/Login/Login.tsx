@@ -4,20 +4,19 @@ import {
   ImageBackground,
   View,
   Image,
-  TouchableOpacity,
   KeyboardAvoidingView,
 } from 'react-native';
 import {StyleSheet} from 'react-native';
+import MyButton from '../../../components/shared/MyButton';
 import MyTextInput from '../../../components/shared/MyTextInput';
 import AuthContext from '../../../context/AuthContext';
+import {AuthStackNavProps} from '../../../navigations/AuthStack/AuthStackTypes';
 import {theme} from '../../../theme/theme';
 
 const backgroundImage = require('../../../assets/login/bg.png');
 const logoImage = require('../../../assets/login/mark.png');
 
-interface LoginProps {}
-
-const Login: React.FC<LoginProps> = ({}) => {
+const Login: React.FC<AuthStackNavProps<'Login'>> = ({navigation}) => {
   const {login} = useContext(AuthContext);
   return (
     <ImageBackground source={backgroundImage} style={styles.container}>
@@ -32,16 +31,17 @@ const Login: React.FC<LoginProps> = ({}) => {
           <MyTextInput title="Password" secure />
         </KeyboardAvoidingView>
         <View style={styles.buttonContainer}>
-          <TouchableOpacity onPress={login} style={styles.button}>
-            <Text style={styles.buttonText}>Sign In</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => {}}
-            style={[styles.button, {backgroundColor: 'transparent'}]}>
-            <Text style={styles.buttonText}>
-              Don't have an account? Sign Up
-            </Text>
-          </TouchableOpacity>
+          <MyButton
+            title="Sign In"
+            onPress={login}
+            backgroundColor={theme.COLOR.SECONDARY}
+          />
+          <MyButton
+            title="Don't have an account? Sign up"
+            onPress={() => {
+              navigation.navigate('SignUp');
+            }}
+          />
         </View>
       </View>
     </ImageBackground>
@@ -73,16 +73,6 @@ const styles = StyleSheet.create({
   form: {
     flex: 1,
     backgroundColor: 'rgba(255, 255,255, .3)',
-  },
-  button: {
-    flex: 1,
-    backgroundColor: theme.COLOR.SECONDARY,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  buttonText: {
-    color: theme.COLOR.WHITE,
-    fontSize: theme.FONT_SIZE.MEDIUM,
   },
   buttonContainer: {
     flex: 1,

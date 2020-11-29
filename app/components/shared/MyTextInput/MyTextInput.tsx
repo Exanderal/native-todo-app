@@ -12,7 +12,7 @@ interface MyTextInputProps {
 
 const MyTextInput: React.FC<MyTextInputProps> = ({
   title,
-  color = theme.COLOR.BACKGROUND_GREY,
+  color = theme.COLOR.DARK_GREY,
   placeholderColor = theme.COLOR.LIGHT_GREY,
   secure = false,
 }) => {
@@ -31,7 +31,7 @@ const MyTextInput: React.FC<MyTextInputProps> = ({
 
 const styles = StyleSheet.create({
   inputWrapper: {
-    flex: 1,
+    height: 75,
     borderBottomWidth: 1,
     borderBottomColor: theme.COLOR.LIGHT_GREY,
     justifyContent: 'center',
@@ -41,9 +41,11 @@ const styles = StyleSheet.create({
   input: {
     marginTop: Platform.OS === 'ios' ? theme.MARGIN.SMALL : 0,
     color: theme.COLOR.WHITE,
+    paddingLeft: 4,
   },
   inputLabel: {
     fontSize: theme.FONT_SIZE.MEDIUM,
+    fontWeight: theme.FONT_WEIGHT.LIGHT,
   },
 });
 
