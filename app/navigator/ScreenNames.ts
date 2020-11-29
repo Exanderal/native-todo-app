@@ -1,0 +1,15 @@
+export const SCREEN_NAMES = {
+  LOGIN: 'Login',
+  SIGN_UP: 'SignUp',
+  WALKTHROUGH: 'Walkthrough',
+  HOME: 'Home',
+  CALENDAR: 'Calendar',
+  OVERVIEW: 'Overview',
+  GROUPS: 'Groups',
+  LIST: 'List',
+  CREATE: 'Create',
+  PROFILE: 'Profile',
+  TIMELINE: 'Timeline',
+  SETTINGS: 'Settings',
+  NAVIGATION: 'Navigation',
+};
