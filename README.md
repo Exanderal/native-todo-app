@@ -7,4 +7,4 @@ This app is going to be used just for training purpose.
 
 ### Design
 
-I found design for this on `https://www.invisionapp.com/inside-design/design-resources/do/`.
+I found design for this on this website: `https://www.invisionapp.com/inside-design/design-resources/do/`.

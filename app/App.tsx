@@ -1,5 +1,5 @@
 import React from 'react';
-import RootStack from './navigator/RootStack';
+import RootStack from './navigations/RootStack';
 
 interface AppProps {}
 

@@ -3,13 +3,23 @@ import {NavigationContainer} from '@react-navigation/native';
 import AuthContext from '../../context/AuthContext';
 import AuthStack from '../AuthStack/AuthStack';
 import AppStack from '../AppStack/AppStack';
+import {User} from '../../interfaces/IUser';
 
 const RootStack = () => {
-  const [userLogged, setUserLogged] = useState(true);
+  const [user, setUser] = useState<User>(null);
   return (
     <NavigationContainer>
-      <AuthContext.Provider value={{userLogged, setUserLogged}}>
-        {userLogged ? <AppStack /> : <AuthStack />}
+      <AuthContext.Provider
+        value={{
+          login: () => {
+            setUser({userName: 'Max'});
+          },
+          logout: () => {
+            setUser(null);
+          },
+          user,
+        }}>
+        {user ? <AppStack /> : <AuthStack />}
       </AuthContext.Provider>
     </NavigationContainer>
   );
