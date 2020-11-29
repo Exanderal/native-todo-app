@@ -1,14 +1,10 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import RootStack from './navigator/RootStack';
 
 interface AppProps {}
 
 const App: React.FC<AppProps> = ({}) => {
-  return (
-    <View>
-      <Text>App is working</Text>
-    </View>
-  );
+  return <RootStack />;
 };
 
 export default App;
