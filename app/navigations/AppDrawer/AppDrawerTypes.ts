@@ -2,9 +2,13 @@ import {DrawerNavigationProp} from '@react-navigation/drawer';
 import {RouteProp} from '@react-navigation/native';
 
 export type AppDrawerParamList = {
-  Calendar: undefined;
-  Create: undefined;
   Home: undefined;
+  Calendar: undefined;
+  Overview: undefined;
+  Groups: undefined;
+  Lists: undefined;
+  Profile: undefined;
+  Timeline: undefined;
 };
 
 export type AppDrawerNavProps<T extends keyof AppDrawerParamList> = {

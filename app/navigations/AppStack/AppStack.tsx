@@ -23,7 +23,11 @@ const AppStack = () => {
           }}
         />
       ) : (
-        <Stack.Screen name="App" component={AppDrawer} />
+        <Stack.Screen
+          name="App"
+          component={AppDrawer}
+          options={{headerShown: false}}
+        />
       )}
     </Stack.Navigator>
   );
