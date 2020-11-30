@@ -2,7 +2,7 @@ import {RouteProp} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 
 export type AppStackParamList = {
-  Home: undefined;
+  App: undefined;
   Walkthrough: undefined;
 };
 

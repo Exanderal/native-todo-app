@@ -20,6 +20,7 @@ const RootStack = () => {
             setUser(null);
           },
           firstLogin,
+          setFirstLogin,
           signUp: () => {
             setFirstLogin(true);
             setUser({userName: 'Max'});

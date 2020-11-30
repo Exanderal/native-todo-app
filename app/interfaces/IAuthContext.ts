@@ -5,5 +5,6 @@ export interface IAuthContext {
   login: () => void;
   logout: () => void;
   signUp: () => void;
+  setFirstLogin: React.Dispatch<React.SetStateAction<boolean>>;
   firstLogin: boolean;
 }

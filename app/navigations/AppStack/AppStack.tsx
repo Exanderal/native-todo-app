@@ -1,20 +1,29 @@
 import React, {useContext} from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import {AppStackParamList} from './AppStackTypes';
-import Home from '../../screens/Main/Home';
+import AppDrawer from '../AppDrawer';
 import Walkthrough from '../../screens/Main/Walkthrough';
 import AuthContext from '../../context/AuthContext';
+import {Text} from 'react-native';
+import Header from '../../components/screens/Walkthrough/Header';
 
 const Stack = createStackNavigator<AppStackParamList>();
 
 const AppStack = () => {
   const {firstLogin} = useContext(AuthContext);
   return (
-    <Stack.Navigator initialRouteName="Home">
+    <Stack.Navigator initialRouteName="App">
       {firstLogin ? (
-        <Stack.Screen name="Walkthrough" component={Walkthrough} />
+        <Stack.Screen
+          name="Walkthrough"
+          component={Walkthrough}
+          options={{
+            headerTitle: '',
+            headerLeft: () => <Header onPress={() => {}} />,
+          }}
+        />
       ) : (
-        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="App" component={AppDrawer} />
       )}
     </Stack.Navigator>
   );

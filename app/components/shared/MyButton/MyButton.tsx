@@ -25,7 +25,8 @@ const MyButton: React.FC<MyButtonProps> = ({
 
 const styles = StyleSheet.create({
   button: {
-    height: 75,
+    flex: 1,
+    maxHeight: 75,
     alignItems: 'center',
     justifyContent: 'center',
   },
